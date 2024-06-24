@@ -1,0 +1,50 @@
+*{
+    font-family: 'Grandstander';
+}
+body{
+    /* background-image: url("../img/bg-index-white.jpg"); */
+    background-color: aqua;
+    background-size: cover; /* 160% */
+    background-position: center; 
+}
+
+/* Header */
+#btn-sound{
+    width: 3em;
+    background-color: #F2BE22;
+}
+#btn-sound:hover{
+    background-color: #a78216;
+}
+#btn-sound > img{
+    width: 100%;
+}
+
+/* Container Tiap Jenis Rambu */
+#containerRambuLarangan{
+    border: #FF6D60 5px solid;
+    border-radius: 20px;
+    background-color: white;
+}
+#containerRambuPeringatan{
+    border: #F7D060 5px solid;
+    border-radius: 20px;
+    background-color: white;
+}
+#containerRambuPetunjuk{
+    border: #0079FF 5px solid;
+    border-radius: 20px;
+    background-color: white;
+}
+
+/* Modal */
+#container-penjelasan{
+    height: 8em;
+}
+#container-penjelasan > h5{
+    color: white;
+}
+/* Buttton */
+.tombol{
+    width: 15em;
+}

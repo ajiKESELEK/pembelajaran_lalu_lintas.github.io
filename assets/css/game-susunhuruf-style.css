@@ -1,0 +1,92 @@
+*{
+    font-family: 'Grandstander';
+}
+
+
+/* Header */
+#btn-sound{
+    width: 3em;
+    background-color: #F2BE22;
+}
+#btn-sound:hover{
+    background-color: #a78216;
+}
+#btn-sound > img{
+    width: 100%;
+}
+
+/* Timer */
+#timer-container{
+    background-color: white;
+    width: fit-content;
+    border: #FF6D60 solid 5px;
+    border-radius: 15px;
+}
+
+#timer-icon-container{
+    border-right: #FF6D60 solid 5px;
+}
+
+.icon{
+    width: 2em;
+}
+
+/* Skor */
+#skor-container{
+    background-color: white;
+    width: 10em;
+    border: #F7D060 solid 5px;
+    border-radius: 15px;
+}
+#skor-icon-container{
+    border-right: #F7D060  solid 5px;
+}
+
+/* SOAL */
+#soal-container{
+    background-color: azure;
+    border: #0079FF 5px solid;
+    border-radius: 15px;
+    height: 13em;
+}
+
+#soal-container > img{
+    width: 9em;
+}
+
+#daftar-huruf-container{
+    height: max-content;
+    background-color: azure;
+    border: #0079FF 3px solid;
+    border-radius: 10px;
+}
+
+.pilihan-huruf{
+    background-color: #F7D060;
+    border: #FF6D60 3px solid;
+    border-radius: 10px;
+    padding: 0.8em;
+}
+
+.pilihan-huruf:hover{
+    cursor: pointer;
+}
+
+/* Jawaban */
+#jawaban-container{
+    height: 5em;
+    background-color: rgba(192, 192, 192, 0.7);
+    border: #0079FF 3px solid;
+    border-radius: 10px;
+}
+
+#result-container{
+    background-color: azure;
+    border: #0079FF 5px solid;
+    border-radius: 15px;
+}
+
+/* Buttton */
+.tombol{
+    width: 15em;
+}

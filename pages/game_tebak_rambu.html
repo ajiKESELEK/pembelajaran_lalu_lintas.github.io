@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bermain Tebak Rambu</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/game-style.css">
+</head>
+<body>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <div class="p-1 d-flex align-items-center me-3" id="timer-container">
+                    <div class="p-1" id="timer-icon-container">
+                        <img src="../assets/icon/clock-regular.png" class="icon" alt="" id="timer-icon">
+                    </div>
+                    <div id="timer-display" class="px-3 fs-4">
+                        120
+                    </div>
+                </div>
+
+                <div class="p-1 d-flex align-items-center" id="skor-container">
+                    <div class="p-1" id="skor-icon-container">
+                        <img src="../assets/icon/star-solid.png" class="icon" id="timer-icon">
+                    </div>
+                    <div id="skor-display" class="px-3 fs-4 text-center">
+                        100000
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="sound-btn-container">
+                    <button class="btn" id="btn-sound">
+                        <img src="../assets/icon/volume-high-solid.png" id="btn-sound-icon">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4" id="result">
+            <div class="col">
+                <div id="result-container" class=" mx-auto w-75 text-center py-5">
+                    <h2>Permainan Telah Selesai</h2>
+                    <h4>Skor Anda : <span id="skor-akhir"></span></h4>
+                    <button class="btn btn-primary tombol" id="btnMainLagi"">Main Lagi!</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="content">
+            <div class="row mt-4">
+                <div class="col">
+                    <div id="soal-container" class=" mx-auto w-75 text-center py-5">
+                        <h3 id="soal"></h3>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row my-3 w-75 mx-auto">
+                <div class="col d-flex justify-content-center mb-2">
+                    <div class="jawaban-container p-3 me-3" id="jawaban-a-container">
+                        <img src="../assets/img/rambu_larangan/bus_dilarang_lewat.png" alt="">
+                    </div>
+                </div>
+                <div class="col d-flex justify-content-center mb-2">
+                    <div class="jawaban-container p-3 me-3" id="jawaban-b-container">
+                        <img src="../assets/img/rambu_larangan/bus_dilarang_lewat.png" alt="">
+                    </div>
+                </div>
+                <div class="col d-flex justify-content-center">
+                    <div class="jawaban-container p-3 me-3" id="jawaban-c-container">
+                        <img src="../assets/img/rambu_larangan/bus_dilarang_lewat.png" alt="">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-12 text-center" id="notif-jawaban">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col text-center">
+                <button id="btn-kembali" class="btn btn-danger tombol" data-bs-toggle="modal" data-bs-target="#konfirmasiModal">Kembali</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="konfirmasiModal" tabindex="-1" aria-labelledby="konfirmasiModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    Progress anda akan hilang jika kembali. Apakah anda ingin tetap keluar?
+                </div>
+                <div class="modal-footer justify-content-center" >
+                    <button type="button" class="btn btn-success tombol" onclick="window.location.href='../pages/menu_bermain.html'">Ya</button>
+                    <button type="button" class="btn btn-danger tombol" data-bs-dismiss="modal">Tidak</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="music-player">
+        <source src="/assets/music/game-music.mp3" type="audio/mpeg">
+    </audio>
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="../assets/js/music-player.js"></script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+        import { getDatabase, ref, set, push } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyD1af8FBFiX3fenQPgcMo9csbEuAIx2Aww",
+          authDomain: "traffic-edu-2a45b.firebaseapp.com",
+          projectId: "traffic-edu-2a45b",
+          storageBucket: "traffic-edu-2a45b.appspot.com",
+          messagingSenderId: "1026422555551",
+          appId: "1:1026422555551:web:698860bee612ea754a33aa"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        // Initialize Firebase Authentication and get a reference to the service
+        const auth = getAuth(app);
+        // Initialize Realtime Database and get a reference to the service
+        const database = getDatabase(app);
+
+        let dataPertanyaan = [
+            {
+                pertanyaan : "Rambu Dilarang Berhenti",
+                pilihan : ['rambu_larangan/dilarang_parkir.png','rambu_larangan/dilarang_stop.png','rambu_larangan/dilarang_masuk.png'],
+                jawaban : 1
+            },
+            {
+                pertanyaan : "Rambu Peringatan Ada Jembatan ",
+                pilihan : ['rambu_peringatan/hati_hati.png','rambu_peringatan/jalan_menyempit.png','rambu_peringatan/jembatan.png'],
+                jawaban : 2
+            },
+            {
+                pertanyaan : "Rambu Jalur Pesepeda",
+                pilihan : ['rambu_petunjuk/jalur_pesepeda.png','rambu_petunjuk/bundaran.png','rambu_petunjuk/jalur_bus.png'],
+                jawaban : 0
+            }
+        ]
+
+        var btnKembali = document.getElementById('btn-kembali');
+        var result = document.getElementById('result');
+        result.style.display="none"
+
+        var skor = 0;
+        var currentQuestion = 0;
+        var timeLeft = 120;
+        var timerId;
+
+        tampilkanSoal();
+        startTimer();
+
+        
+
+        function tampilkanSoal(){
+            var textSoal = document.getElementById('soal');
+            var pilihanJawaban = document.getElementsByClassName('jawaban-container');
+            var imgPilihanJawaban = document.querySelectorAll('.jawaban-container img')
+            var displaySkor = document.getElementById('skor-display');
+
+            var currentQuestionData = dataPertanyaan[currentQuestion];
+            textSoal.innerHTML = currentQuestionData.pertanyaan;
+
+            displaySkor.innerHTML = Math.floor(skor);
+            
+            for(var i=0; i < pilihanJawaban.length ; i++){
+                imgPilihanJawaban[i].src = "../assets/img/"+currentQuestionData.pilihan[i]
+            }
+
+            for(var i=0; i<pilihanJawaban.length; i++){
+                pilihanJawaban[i].onclick = (event) =>{
+                    var jawabanDipilih = event.currentTarget;
+                    var indexJawabanDipilih = Array.prototype.indexOf.call(pilihanJawaban, jawabanDipilih);
+                    cekJawaban(indexJawabanDipilih);
+                }
+            }
+        }
+
+        function cekJawaban(index){
+            var pilihanJawaban = document.getElementsByClassName("jawaban-container");
+            var resultContainer = document.querySelector(".result-container");
+            var notifJawaban = document.getElementById("notif-jawaban");
+            var jawabanDipilih = pilihanJawaban[index];
+            var displaySkor = document.getElementById('skor-display');
+
+            if(index == dataPertanyaan[currentQuestion].jawaban){
+                var sisaWaktu = 120-timeLeft
+                skor += 10 * 120/sisaWaktu;
+                notifJawaban.innerHTML = "<h4 class='text-success'>Jawaban Anda Benar!</h4>"
+            }else{
+                notifJawaban.innerHTML = "<h4 class='text-danger'>Jawaban Anda Salah!</h4>"
+            }
+            notifJawaban.style.display = "inline"
+
+            displaySkor.innerHTML = Math.floor(skor);
+            setTimeout(nextQuestion, 1000);
+        }
+
+        function nextQuestion(){
+            var pilihanJawaban = document.getElementsByClassName('jawaban-container');
+            var notifJawaban = document.getElementById("notif-jawaban");
+            notifJawaban.style.display = "none"
+
+            currentQuestion++;
+            if(currentQuestion < dataPertanyaan.length){
+                tampilkanSoal()
+            }else{
+                endGame();
+            }
+        }
+
+        function endGame(){
+            clearTimeout(timerId);
+
+            var content = document.getElementById('content');
+            var result = document.getElementById('result');
+            var displayskorAkhir = document.getElementById('skor-akhir')
+            
+
+            displayskorAkhir.innerHTML = Math.floor(skor);
+            content.style.display = "none"
+            result.style.display = "block"
+
+            btnKembali.removeAttribute("data-bs-target")
+            btnKembali.addEventListener('click', function backToMenu() {
+                document.location.href= '../pages/menu_bermain.html'
+            })
+
+            // Check user login 
+            onAuthStateChanged(auth, (user)=>{
+                if(user){
+                    const username = user.displayName
+                    const leaderboardListRef = ref(database, 'tebakRambu');
+                    const newLeaderboardRef = push(leaderboardListRef);
+                    set(newLeaderboardRef, {
+                        name : username,
+                        score : Math.floor(skor)
+                    })
+                }else{
+                    console.log('belum login')
+                }
+            })
+        }
+
+        function startTimer(){
+            var timerDisplay = document.getElementById('timer-display')
+
+            function updateTimer(){
+                timerDisplay.innerHTML = timeLeft;
+
+                if(timeLeft == 0){
+                    endGame()
+                }else{
+                    timeLeft--;
+                    timerId = setTimeout(updateTimer,1000)
+                }
+            }
+
+            updateTimer();
+        }
+
+        var btnMainLagi = document.getElementById('btnMainLagi');
+        btnMainLagi.addEventListener('click', e =>{
+            var content = document.getElementById('content');
+            var result = document.getElementById('result');
+
+            skor = 0;
+            currentQuestion = 0;
+            timeLeft = 120;
+            
+            content.style.display = "block"
+            result.style.display = "none"
+            btnKembali.setAttribute('data-bs-target','#konfirmasiModal')
+
+            tampilkanSoal()
+            startTimer()
+        })
+    </script>
+</body>
+</html>

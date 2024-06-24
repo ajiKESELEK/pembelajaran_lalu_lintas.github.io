@@ -1,0 +1,131 @@
+{
+    "larangan":[
+        {
+         "nama" : "Batas Kecepatan Maksimal",
+         "img" : "batas_kecepatan_maksimal.png",
+         "deskripsi" : "Pengendara dilarang melebihi 80 Km."
+        },
+        {
+         "nama" : "Bus Dilarang Lewat",
+         "img" : "bus_dilarang_lewat.png",
+         "deskripsi" : "Bus dilarang masuk ke jalan tersebut."
+        },
+        {
+         "nama" : "Dilarang Belok Kanan",
+         "img" : "dilarang_belok_kanan.png",
+         "deskripsi" : "Pengendara dilarang belok kanan"
+        },
+        {
+         "nama" : "Dilarang Belok Kiri",
+         "img" : "dilarang_belok_kiri.png",
+         "deskripsi" : "Pengendara dilarang belok kiri"
+        },
+        {
+         "nama" : "Dilarang Belok Kanan",
+         "img" : "dilarang_belok_kanan.png",
+         "deskripsi" : "Pengendara dilarang belok kanan"
+        },
+        {
+         "nama" : "Dilarang Lurus",
+         "img" : "dilarang_lurus.png",
+         "deskripsi" : "Pengendara dilarang lurus"
+        },
+        {
+         "nama" : "Dilarang Masuk",
+         "img" : "dilarang_masuk.png",
+         "deskripsi" : "Pengendara dilarang masuk"
+        },
+        {
+         "nama" : "Dilarang Mendahului",
+         "img" : "dilarang_mendahului.png",
+         "deskripsi" : "Pengendara dilarang mendahului/menyalip pengendara lain"
+        },
+        {
+         "nama" : "Dilarang Parkir",
+         "img" : "dilarang_parkir.png",
+         "deskripsi" : "Pengendara dilarang parkir di area tersebut"
+        },
+        {
+         "nama" : "Dilarang Putar Arah",
+         "img" : "dilarang_putar_arah.png",
+         "deskripsi" : "Pengendara dilarang putar arah pada tempat tersebut"
+        },
+        {
+         "nama" : "Dilarang Putar Arah dan Belok Kanan",
+         "img" : "dilarang_putar_arah_belok_kanan.png",
+         "deskripsi" : "Pengendara dilarang putar arah dan belok kanan"
+        },
+        {
+         "nama" : "Dilarang Stop",
+         "img" : "dilarang_stop.png",
+         "deskripsi" : "Pengendara dilarang stop di area tersebut"
+        },
+        {
+         "nama" : "Gerobak Dilarang Masuk",
+         "img" : "gerobak_dilarang_masuk.png",
+         "deskripsi" : "Gerobak dilarang masuk ke wilayah tersebut"
+        },
+        {
+         "nama" : "Mobil Dilarang Masuk",
+         "img" : "mobil_dilarang_masuk.png",
+         "deskripsi" : "Kendaraan mobil dilarang masuk"
+        },
+        {
+         "nama" : "Mobil dan Motor Dilarang Masuk",
+         "img" : "mobil_motor_dilarang_masuk.png",
+         "deskripsi" : "Kendaraan mobil dan motor dilarang masuk"
+        },
+        {
+         "nama" : "Dilarang Masuk",
+         "img" : "dilarang_masuk.png",
+         "deskripsi" : "Kendaraan truk dilarang masuk"
+        }
+
+    ],
+    "peringatan" : [
+        {
+            "nama" : "Banyak Pejalan Kaki",
+            "img" : "banyak_pejalan_kaki.png",
+            "deskripsi" : "Mengingatkan pengendara area tersebut banyak pejalan kaki"
+        },
+        {
+            "nama" : "Jalan Licin",
+            "img" : "jalan_licin.png",
+            "deskripsi" : "Mengingatkan pengendara jalan di area tersebut licin"
+        },
+        {
+            "nama" : "Hati-Hati",
+            "img" : "jalan_licin.png",
+            "deskripsi" : "Mengingatkan pengendara untuk hati-hati di area tersebut"
+        },
+        {
+            "nama" : "Polisi Tidur",
+            "img" : "polisi_tidur.png",
+            "deskripsi" : "Mengingatkan pengendara sebentar lagi akan melewati polisi tidur"
+        }
+    ],
+    "petunjuk" : [
+        {
+            "nama" : "Jalur Bus",
+            "img" : "jalur_bus.png",
+            "deskripsi" : "Jalur tersebut hanya khusus untuk dilewati bus."
+        },
+        {
+            "nama" : "Jalur Pesepeda",
+            "img" : "jalur_pesepeda.png",
+            "deskripsi" : "Jalur tersebut hanya khusus untuk dilewati sepeda"
+        },
+        {
+            "nama" : "Mesjid",
+            "img" : "mesjid.png",
+            "deskripsi" : "Sebentar lagi akan ada mesjid"
+        },
+        {
+            "nama" : "Gereja",
+            "img" : "gereja.png",
+            "deskripsi" : "Sebentar lagi akan ada gereja"
+        }
+    ]
+}
+
+    

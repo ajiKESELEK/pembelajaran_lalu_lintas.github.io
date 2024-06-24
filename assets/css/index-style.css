@@ -1,0 +1,75 @@
+*{
+    font-family: 'Grandstander';
+}
+body{
+    /* background-image: url("../img/bg-index-white.jpg"); */
+    background-size: cover; /* 160% */
+    background-position: center; 
+}
+
+/* Header */
+#btn-sound{
+    width: 3em;
+    background-color: #F2BE22;
+}
+#btn-sound:hover{
+    background-color: #a78216;
+}
+#btn-sound > img{
+    width: 100%;
+}
+
+/* GAME TITLE */
+#game-title {
+    font-size: 6em;
+    color: #F45050;
+    text-shadow:
+    -1.4px -1.4px 0 #363636,
+     0   -1.4px 0 #363636,
+     1.4px -1.4px 0 #363636,
+     1.4px  0   0 #363636,
+     1.4px  1.4px 0 #363636,
+     0    1.4px 0 #363636,
+    -1.4px  1.4px 0 #363636,
+    -1.4px  0   0 #363636;
+}
+#game-title > span{
+    color: #FFBE3F ;
+}
+#game-title-small{
+    font-size: 3em;
+}
+
+/* BUTTON */
+.tombol{
+    width: 15em;
+}
+
+#btn-mulai{
+    background-color: #0079FF;
+    color: white;
+}
+#btn-mulai:hover{
+    background-color: #03499a;
+}
+
+#btn-materi{
+    background-color: #00DFA2;
+    color: white;
+}
+#btn-materi:hover{
+    background-color: #018d67;
+}
+
+#btn-tentang{
+    background-color: #FF0060;
+    color: white;
+}
+#btn-tentang:hover{
+    background-color: #920239;
+}
+
+/* FOOTER */
+footer > p{
+    font-family: Arial, Helvetica, sans-serif !important;
+}

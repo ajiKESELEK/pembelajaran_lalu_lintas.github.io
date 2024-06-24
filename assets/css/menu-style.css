@@ -1,0 +1,43 @@
+*{
+    font-family: 'Grandstander';
+}
+
+
+/* Header */
+#btn-sound{
+    width: 3em;
+    background-color: #F2BE22;
+}
+#btn-sound:hover{
+    background-color: #a78216;
+}
+#btn-sound > img{
+    width: 100%;
+}
+
+#btn-leaderboard{
+    width: 3em;
+    background-color: #6BCB77;
+}
+#btn-leaderboard:hover{
+    background-color: #46834e;
+}
+#btn-leaderboard > img{
+    width: 100%;
+}
+
+#btn-tutorial{
+    width: 3em;
+    background-color: #4D96FF;
+}
+#btn-tutorial:hover{
+    background-color: #2c5691;
+}
+#btn-tutorial > img{
+    width: 50%;
+}
+
+/* Buttton */
+.tombol{
+    width: 15em;
+}

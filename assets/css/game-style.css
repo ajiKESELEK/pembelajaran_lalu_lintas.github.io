@@ -1,0 +1,75 @@
+*{
+    font-family: 'Grandstander';
+}
+
+
+/* Header */
+#btn-sound{
+    width: 3em;
+    background-color: #F2BE22;
+}
+#btn-sound:hover{
+    background-color: #a78216;
+}
+#btn-sound > img{
+    width: 100%;
+}
+
+/* Timer */
+#timer-container{
+    background-color: white;
+    width: fit-content;
+    border: #FF6D60 solid 5px;
+    border-radius: 15px;
+}
+
+#timer-icon-container{
+    border-right: #FF6D60 solid 5px;
+}
+
+.icon{
+    width: 2em;
+}
+
+/* Skor */
+#skor-container{
+    background-color: white;
+    width: 10em;
+    border: #F7D060 solid 5px;
+    border-radius: 15px;
+}
+#skor-icon-container{
+    border-right: #F7D060  solid 5px;
+}
+
+/* SOAL */
+#soal-container{
+    background-color: azure;
+    border: #0079FF 5px solid;
+    border-radius: 15px;
+}
+
+/* JAWABAN */
+.jawaban-container{
+    background-color: azure;
+    border: #0079FF 5px solid;
+    width: max-content;
+    border-radius: 15px;
+}
+.jawaban-container:hover{
+    cursor: pointer;
+}
+.jawaban-container > img{
+    width: 8em;
+}
+
+/* Buttton */
+.tombol{
+    width: 15em;
+}
+
+#result-container{
+    background-color: azure;
+    border: #0079FF 5px solid;
+    border-radius: 15px;
+}
